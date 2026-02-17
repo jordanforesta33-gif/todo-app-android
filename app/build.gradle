@@ -1,0 +1,36 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.todoapp"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation "androidx.core:core-ktx:1.12.0"
+    implementation "androidx.appcompat:appcompat:1.6.1"
+    implementation "androidx.room:room-runtime:2.5.2"
+    kapt "androidx.room:room-compiler:2.5.2"
+    implementation "androidx.compose.ui:ui:1.5.0"
+    implementation "androidx.compose.material3:material3:1.2.1"
+    implementation "dagger.hilt.android:hilt-lifecycle-viewmodel:1.1.0-alpha07"
+    kapt "dagger.hilt.android.compiler:hilt-compiler:1.1.0-alpha07"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3"
+}
